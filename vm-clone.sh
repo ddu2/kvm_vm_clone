@@ -1,6 +1,9 @@
 #!/bin/bash
 #
-#
+# Note: to use this script, all the templates must have string
+#   'tpl' in their name, otherwise you need change 'tpl' to
+#   the string that all templates have in common.
+# 
 # date: 2016-06-14
 
 
