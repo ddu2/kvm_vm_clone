@@ -17,6 +17,12 @@ echo "======"
 echo -e "Choose the template: \c"
 read tpl_num
 
+if [[ $tpl_num -lt 1 || $tpl_num -gt $(virsh list --all|grep tpl|wc -l) ]] ; then
+    echo 'Please choose the right template'
+    exit
+fi
+
+
 template=`virsh list --all | grep tpl | nl | sed -n ${tpl_num}p | awk '{print $3}'`
 
 echo -e "Enter the new vm name: \c"
