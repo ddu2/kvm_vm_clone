@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "======"
-virsh list --all | grep tpl | sed 's/shut off//g' | nl | sed 's/-     //g' | sed 's/^   //g'
+virsh list --all | grep tpl | awk '{print $2}' | nl | sed 's/^   //g'
 echo "======"
 echo -e "Choose the template: \c"
 #read template
