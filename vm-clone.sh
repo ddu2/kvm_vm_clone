@@ -22,7 +22,6 @@ if [[ $tpl_num -lt 1 || $tpl_num -gt $(virsh list --all|grep tpl|wc -l) ]] ; the
     exit
 fi
 
-
 template=`virsh list --all | grep tpl | sed -n ${tpl_num}p | awk '{print $2}'`
 
 echo -e "Enter the new vm name: \c"
